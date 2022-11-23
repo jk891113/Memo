@@ -20,11 +20,10 @@ public class Main {
             } else if (chooseMenu == 3) {
 
             } else if (chooseMenu == 4) {
-
+                inputUI.deleteUI();
             } else if (chooseMenu == 5) {
                 System.out.println("메모장을 종료합니다.");
                 System.exit(0);
-
             } else {
                 System.out.println("잘못된 명령어 입니다.");
                 System.exit(0);
