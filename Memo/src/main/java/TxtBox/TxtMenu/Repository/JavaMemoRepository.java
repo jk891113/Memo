@@ -3,8 +3,14 @@ package TxtBox.TxtMenu.Repository;
 import TxtBox.Presentation.InputUI;
 import TxtBox.TxtMenu.MemoList;
 import TxtBox.TxtMenu.MemoListItem;
-
 import java.util.HashMap;
+
+
+interface MemoRepository {
+    void saveMemo(InputUI memoListItemList);
+    MemoListItem getMemoListItem(int txtNumber, InputUI memoListItemList);
+    MemoList getMemoList(int txtNumber);
+}
 
 public class JavaMemoRepository implements MemoRepository {
     private HashMap memoDB = new HashMap();
@@ -12,7 +18,6 @@ public class JavaMemoRepository implements MemoRepository {
     @Override
     public void saveMemo(InputUI memoListItemList) {
         int txtNumber = this.memoDB.size() + 1;
-
         this.memoDB.put(txtNumber, memoListItemList);
     }
 
