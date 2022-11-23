@@ -25,7 +25,7 @@ public class InputUI {
         String name = scannerName.nextLine();
 
         System.out.print("비밀번호 : ");
-        String password = scannerPassword.nextLine();
+        String password = scannerPassword.next();
 
         System.out.print("제목 : ");
         String title = scannerTitle.nextLine();
