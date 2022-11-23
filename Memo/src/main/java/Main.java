@@ -16,12 +16,14 @@ public class Main {
             if (chooseMenu == 1) {
                 inputUI.inputUI();
             } else if (chooseMenu == 2) {
-                inputUI.getUI();
+                inputUI.getAllUI();
             } else if (chooseMenu == 3) {
-
+                inputUI.getUI();
             } else if (chooseMenu == 4) {
-                inputUI.deleteUI();
+                inputUI.replaceUI();
             } else if (chooseMenu == 5) {
+                inputUI.deleteUI();
+            } else if (chooseMenu == 6) {
                 System.out.println("메모장을 종료합니다.");
                 System.exit(0);
             } else {
