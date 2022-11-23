@@ -1,11 +1,10 @@
 import TxtBox.Presentation.*;
-import TxtBox.TxtMenu.MemoList;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        BaseInterface UI = new BaseInterface();
+        BaseUI UI = new BaseUI();
         UI.run(); //웹브라우저 예시
 
         Scanner scanner = new Scanner(System.in);
@@ -13,20 +12,15 @@ public class Main {
         while(true) {
             int chooseMenu = scanner.nextInt();
             if (chooseMenu == 1) {
-                InputInterface inputUI = new InputInterface();
-                inputUI.inputInterface();
+                InputUI inputUI = new InputUI();
+                inputUI.inputUI();
 
             } else if (chooseMenu == 2) {
-                GetInterface getUI = new GetInterface();
-                getUI.getInterface();
+                GetUI getUI = new GetUI();
 
             } else if (chooseMenu == 3) {
-                ReviseInterface editUI = new ReviseInterface();
-                editUI.reviseInterface();
 
             } else if (chooseMenu == 4) {
-                DeleteInterface deleteUI = new DeleteInterface();
-                deleteUI.deleteInterface();
 
             } else if (chooseMenu == 5) {
                 System.out.println("메모장을 종료합니다.");

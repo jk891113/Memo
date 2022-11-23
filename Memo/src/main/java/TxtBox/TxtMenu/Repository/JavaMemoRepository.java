@@ -1,5 +1,6 @@
 package TxtBox.TxtMenu.Repository;
 
+import TxtBox.Presentation.InputUI;
 import TxtBox.TxtMenu.MemoList;
 import TxtBox.TxtMenu.MemoListItem;
 
@@ -9,13 +10,14 @@ public class JavaMemoRepository implements MemoRepository {
     private HashMap memoDB = new HashMap();
 
     @Override
-    public void saveMemo(MemoList memoList) {
+    public void saveMemo(InputUI memoListItemList) {
         int txtNumber = this.memoDB.size() + 1;
-        this.memoDB.put(txtNumber, memoList);
+
+        this.memoDB.put(txtNumber, memoListItemList);
     }
 
     @Override
-    public MemoListItem getMemoListItem(int txtNumber, String inputName, String inputPassword, String inputTitle, String inputContents) {
+    public MemoListItem getMemoListItem(int txtNumber, InputUI memoListItemList) {
         return null;
     }
 

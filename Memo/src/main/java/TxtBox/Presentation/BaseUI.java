@@ -1,6 +1,6 @@
 package TxtBox.Presentation;
 
-public class BaseInterface {
+public class BaseUI {
     public void run() {
         System.out.println("-----------------입력 (1번)-----------------");
         System.out.println("-----------------출력 (2번)-----------------");

@@ -1,15 +1,19 @@
 package TxtBox.TxtMenu;
 
-import TxtBox.Presentation.InputInterface;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class MemoList {
     private final List<MemoListItem> memoListItemList = new ArrayList<>();
 
-    public MemoList(String name, ) {
+    public MemoList(MemoListItem name, MemoListItem password, MemoListItem title, MemoListItem contents) {
+        memoListItemList.add(name);
+        memoListItemList.add(password);
+        memoListItemList.add(title);
+        memoListItemList.add(contents);
+    }
 
-        this.memoListItemList.add(new MemoListItem("name")));
+    public List<MemoListItem> getMemoListItemList() {
+        return memoListItemList;
     }
 }

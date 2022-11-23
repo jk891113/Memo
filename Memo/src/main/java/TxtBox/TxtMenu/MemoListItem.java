@@ -22,6 +22,8 @@ public class MemoListItem {
     public String getContents() {
         return contents;
     }
-//    public String getMemo() {return name, title, contents;}
+    public String getPassword() {
+        return password;
+    }
 }
 
