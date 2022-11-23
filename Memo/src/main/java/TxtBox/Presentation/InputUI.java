@@ -1,13 +1,16 @@
 package TxtBox.Presentation;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
 public class InputUI {
-    private final List<String> memoListItemList = new ArrayList<>();
+
+    private HashMap memoDB = new HashMap();
 
     public void inputUI() {
+        final List<String> memoItemList = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         System.out.println("------------------메모 입력------------------");
 
@@ -23,19 +26,24 @@ public class InputUI {
         System.out.println("내용 : ");
         String contents = scanner.nextLine();
 
-        memoListItemList.add(name);
-        memoListItemList.add(password);
-        memoListItemList.add(title);
-        memoListItemList.add(contents);
+        memoItemList.add(name);
+        memoItemList.add(password);
+        memoItemList.add(title);
+        memoItemList.add(contents);
 
+        int txtNumber = memoDB.size() + 1;
+        memoDB.put(txtNumber, memoItemList);
+
+        System.out.println(txtNumber);
         System.out.println("메모 입력이 완료 되었습니다.");
-        System.out.println(memoListItemList);
-
     }
-    public void getInterface() {
+
+    public void getUI() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("출력할 메모의 번호를 입력하세요.");
         System.out.print("번호 : ");
         int number = scanner.nextInt();
+        System.out.println("이름 : " + memoDB.get(number));
+        System.out.println("제목 : " + memoDB.get(number));
     }
 }

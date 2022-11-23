@@ -1,23 +1,22 @@
 import TxtBox.Presentation.*;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         BaseUI UI = new BaseUI();
-        UI.run(); //웹브라우저 예시
+        InputUI inputUI = new InputUI();
 
         Scanner scanner = new Scanner(System.in);
 
         while(true) {
+            UI.run();
             int chooseMenu = scanner.nextInt();
             if (chooseMenu == 1) {
-                InputUI inputUI = new InputUI();
                 inputUI.inputUI();
-
             } else if (chooseMenu == 2) {
-                GetUI getUI = new GetUI();
-
+                inputUI.getUI();
             } else if (chooseMenu == 3) {
 
             } else if (chooseMenu == 4) {
