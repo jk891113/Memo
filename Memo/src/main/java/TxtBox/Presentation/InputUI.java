@@ -72,7 +72,7 @@ public class InputUI {
     }
 
     public void getAllUI() {
-        for (int i = 1; i < bignum; i++) {
+        for (int i = 1; i <= bignum; i++) {
             if (memoDB.get(i) == null) {
                 continue;
             }
