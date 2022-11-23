@@ -7,7 +7,11 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class InputUI {
-    Scanner scanner = new Scanner(System.in);
+    Scanner scannerName = new Scanner(System.in);
+    Scanner scannerPassword = new Scanner(System.in);
+    Scanner scannerTitle = new Scanner(System.in);
+    Scanner scannerContents = new Scanner(System.in);
+    Scanner scannerNumber = new Scanner(System.in);
     private HashMap memoDB = new HashMap();
 
     int bignum = 0;
@@ -18,16 +22,16 @@ public class InputUI {
         System.out.println("------------------메모 입력------------------");
 
         System.out.print("이름 : ");
-        String name = scanner.nextLine();
+        String name = scannerName.nextLine();
 
         System.out.print("비밀번호 : ");
-        String password = scanner.nextLine();
+        String password = scannerPassword.nextLine();
 
         System.out.print("제목 : ");
-        String title = scanner.nextLine();
+        String title = scannerTitle.nextLine();
 
         System.out.print("내용 : ");
-        String contents = scanner.nextLine();
+        String contents = scannerContents.nextLine();
 
         memoItemList.add(name);
         memoItemList.add(password);
@@ -63,7 +67,7 @@ public class InputUI {
     public void getUI() {
         System.out.println("출력할 메모의 번호를 입력하세요.");
         System.out.print("번호 : ");
-        int number = scanner.nextInt();
+        int number = scannerNumber.nextInt();
         List memoData = (List) memoDB.get(number);
         System.out.println("이름 : " + memoData.get(0));
         System.out.println("제목 : " + memoData.get(2));
@@ -83,7 +87,7 @@ public class InputUI {
     public void deleteUI() {
         System.out.println("삭제할 메모의 번호를 입력하세요.");
         System.out.print("번호 : ");
-        int number = scanner.nextInt();
+        int number = scannerNumber.nextInt();
         List memoData = (List) memoDB.get(number);
         System.out.println("이름 : " + memoData.get(0));
         System.out.println("제목 : " + memoData.get(2));
@@ -91,7 +95,7 @@ public class InputUI {
         System.out.println("작성시간 : " + memoData.get(4));
 
         System.out.print("비밀번호 : ");
-        String pw = scanner.next();
+        String pw = scannerPassword.next();
         if (pw.equals(memoData.get(1))) {
             memoDB.remove((number));
             System.out.println(number + "번의 메모가 삭제 되었습니다.");
@@ -103,7 +107,7 @@ public class InputUI {
     public void replaceUI() {
         System.out.println("수정할 메모의 번호를 입력하세요.");
         System.out.print("번호 : ");
-        int number = scanner.nextInt();
+        int number = scannerNumber.nextInt();
         List memoData = (List) memoDB.get(number);
         System.out.println("이름 : " + memoData.get(0));
         System.out.println("제목 : " + memoData.get(2));
@@ -111,20 +115,20 @@ public class InputUI {
         System.out.println("작성시간 : " + memoData.get(4));
 
         System.out.print("비밀번호 : ");
-        String pw = scanner.next();
+        String pw = scannerPassword.next();
         if (pw.equals(memoData.get(1))) {
             final List<String> memoItemList = new ArrayList<>();
 
             String password = pw;
 
             System.out.print("이름 : ");
-            String name = scanner.nextLine();
+            String name = scannerName.nextLine();
 
             System.out.print("제목 : ");
-            String title = scanner.nextLine();
+            String title = scannerTitle.nextLine();
 
             System.out.print("내용 : ");
-            String contents = scanner.nextLine();
+            String contents = scannerContents.nextLine();
 
             memoItemList.add(name);
             memoItemList.add(password);
