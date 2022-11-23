@@ -74,21 +74,11 @@ public class InputUI {
 
         System.out.print("비밀번호 : ");
         String pw = scanner.next();
-        if (pw == memoData.get(1)) {
+        if (pw.equals(memoData.get(1))) {
             memoDB.remove((number));
             System.out.println(number + "번의 메모가 삭제 되었습니다.");
+        } else {
+            System.out.println("비밀번호가 일치하지 않습니다.");
         }
-        System.out.println("비밀번호가 일치하지 않습니다.");
-
-//        for (int i = 1; i < memoDB.size(); i++) {
-//            if (memoDB.containsKey(i)) {
-//                continue;
-//            } else {
-//
-//            }
-//        }
-//            System.out.println(i + " : " + memoDB.get(i));
-
-
     }
 }
